@@ -1,3 +1,12 @@
+
+# Usage
+
+- clone repo
+- move DNA file into root directory of project
+- `npm install`
+- `npm run dev`
+
+
 # ToDo
 
 - tests
