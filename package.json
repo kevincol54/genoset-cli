@@ -1,0 +1,44 @@
+{
+  "name": "genome-cli",
+  "version": "0.0.1",
+  "description": "CLI tool to help analyze ones raw sequenced DNA",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
+    "dev": "babel source --presets babel-preset-es2015 --out-dir distribution && node ./distribution/index.js",
+    "lint": "standard *.js source/*.js tests/*.js",
+    "prepublish": "npm run build",
+    "start": "node ./distribution/index.js",
+    "test": "npm run build && tap ./tests/*.js"
+  },
+  "keywords": [
+    "cli",
+    "CLI",
+    "genome",
+    "genoset",
+    "genome.js",
+    "genosets",
+    "DNA"
+  ],
+  "author": "Kevin Collins <kevincol54@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "4.4.x",
+    "npm": "2.14.x"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "cli-table": "^0.3.1",
+    "dna2json": "^1.0.1",
+    "genoset-209": "^1.0.0",
+    "inquirer": "^0.12.0",
+    "rx": "^4.1.0"
+  },
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "rewire": "^2.5.1",
+    "standard": "^6.0.5"
+  }
+}
