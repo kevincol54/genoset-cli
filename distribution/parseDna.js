@@ -15,8 +15,9 @@ var _fs = require('fs');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var dnaParser = _rx2.default.Observable.fromCallback(_dna2json.parse);
+
 var parseDna = function parseDna(filePath) {
-  var dnaParser = _rx2.default.Observable.fromCallback(_dna2json.parse);
   return dnaParser((0, _fs.readFileSync)(filePath, 'utf8'));
 };
 
