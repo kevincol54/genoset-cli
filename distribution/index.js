@@ -30,7 +30,6 @@ var onComplete = function onComplete() {
 };
 
 var onEachAnswer = function onEachAnswer(res) {
-  console.log("res:");
   (0, _tableBuilder.buildTable)(res);
 };
 
