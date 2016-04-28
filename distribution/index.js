@@ -20,28 +20,22 @@ var _welcomeQuestions = require('./welcomeQuestions');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var parse = function parse(input) {
-  return (0, _parseDna.parseDna)(_path2.default.resolve(__dirname, '../', input.answer));
-};
-
 var onError = function onError(err) {
+  // handle specific error cases('ENOENT', etc)
   console.log("err:", err);
 };
 
 var onComplete = function onComplete() {
-  console.log("All genosets have finished processing.");
+  console.log("CLI tool has finished running.");
 };
 
 var onEachAnswer = function onEachAnswer(res) {
-  if (res.name === 'fileName') {
-    parse(res)
-    // .catch(e => {
-    //   console.log("e:", e)
-    // })
-    .subscribe(_tableBuilder.buildTable, onError, onComplete);
-  }
+  console.log("res:");
+  (0, _tableBuilder.buildTable)(res);
 };
 
-_welcomeQuestions.welcomeQuestions.catch(function (e) {
-  console.log("e:", e);
+_welcomeQuestions.welcomeQuestions.filter(function (res) {
+  return res.name === 'fileName';
+}).flatMap(function (input) {
+  return (0, _parseDna.parseDna)(_path2.default.resolve(__dirname, '../', input.answer));
 }).subscribe(onEachAnswer, onError, onComplete);

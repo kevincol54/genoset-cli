@@ -7,8 +7,6 @@ import { parseDna } from './parseDna'
 import { buildTable } from './tableBuilder'
 import { welcomeQuestions } from './welcomeQuestions'
 
-const parse = input => parseDna(path.resolve(__dirname, '../', input.answer))
-
 const onError = err => {
   // handle specific error cases('ENOENT', etc)
   console.log("err:", err)
@@ -19,21 +17,12 @@ const onComplete = () => {
 }
 
 const onEachAnswer = res => {
-  if(res.name === 'fileName') {
-    parse(res)
-      .subscribe(
-        buildTable,
-        onError,
-        onComplete
-      )
-  }
+  buildTable(res)
 }
 
 welcomeQuestions
-  .catch(e => {
-    console.log("e:", e)
-  })
-  // look in rxjs for better way to handle the onEachAnswer conditional block
+  .filter(res => res.name === 'fileName')
+  .flatMap(input => parseDna(path.resolve(__dirname, '../', input.answer)))
   .subscribe(
     onEachAnswer,
     onError,

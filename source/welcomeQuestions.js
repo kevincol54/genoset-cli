@@ -22,6 +22,6 @@ const prompts = Rx.Observable.create(obs => {
   obs.onCompleted()
 })
 
-const welcomeQuestions = inquirer.prompt(prompts).process
+const welcomeQuestions = inquirer.prompt(prompts).process.catch(e => Rx.Observable.throw(e))
 
 export { welcomeQuestions }
