@@ -23,8 +23,8 @@
   "author": "Kevin Collins <kevincol54@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "4.4.x",
-    "npm": "2.14.x"
+    "node": "6.0.0",
+    "npm": "3.8.6"
   },
   "dependencies": {
     "chalk": "^1.1.3",

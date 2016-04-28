@@ -22,4 +22,6 @@ const prompts = Rx.Observable.create(obs => {
   obs.onCompleted()
 })
 
-export const welcomeQuestions = inquirer.prompt(prompts).process
+const welcomeQuestions = inquirer.prompt(prompts).process
+
+export { welcomeQuestions }

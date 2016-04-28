@@ -37,4 +37,6 @@ var prompts = _rx2.default.Observable.create(function (obs) {
   obs.onCompleted();
 });
 
-var welcomeQuestions = exports.welcomeQuestions = _inquirer2.default.prompt(prompts).process;
+var welcomeQuestions = _inquirer2.default.prompt(prompts).process;
+
+exports.welcomeQuestions = welcomeQuestions;

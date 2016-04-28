@@ -15,9 +15,15 @@ var _fs = require('fs');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var fileContents = _rx2.default.Observable.fromNodeCallback(_fs.readFile);
+var dnaParser = _rx2.default.Observable.fromCallback(_dna2json.parse);
+
 var parseDna = function parseDna(filePath) {
-  var dnaParser = _rx2.default.Observable.fromCallback(_dna2json.parse);
-  return dnaParser((0, _fs.readFileSync)(filePath, 'utf8'));
+  return fileContents(filePath, 'utf8').flatMap(function (file) {
+    return dnaParser(file);
+  }).catch(function (e) {
+    return _rx2.default.Observable.throw(e);
+  });
 };
 
 exports.parseDna = parseDna;

@@ -24,14 +24,6 @@ var parse = function parse(input) {
   return (0, _parseDna.parseDna)(_path2.default.resolve(__dirname, '../', input.answer));
 };
 
-var onEachAnswer = function onEachAnswer(res) {
-  if (res.name === 'fileName') {
-    parse(res).subscribeOnNext(function (input) {
-      (0, _tableBuilder.buildTable)(input);
-    });
-  }
-};
-
 var onError = function onError(err) {
   console.log("err:", err);
 };
@@ -40,4 +32,16 @@ var onComplete = function onComplete() {
   console.log("All genosets have finished processing.");
 };
 
-_welcomeQuestions.welcomeQuestions.subscribe(onEachAnswer, onError, onComplete);
+var onEachAnswer = function onEachAnswer(res) {
+  if (res.name === 'fileName') {
+    parse(res)
+    // .catch(e => {
+    //   console.log("e:", e)
+    // })
+    .subscribe(_tableBuilder.buildTable, onError, onComplete);
+  }
+};
+
+_welcomeQuestions.welcomeQuestions.catch(function (e) {
+  console.log("e:", e);
+}).subscribe(onEachAnswer, onError, onComplete);
