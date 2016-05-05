@@ -6,7 +6,7 @@ import inquirer from 'inquirer'
 
 const prompts = Rx.Observable.create(obs => {
   obs.onNext({
-    message: 'Would you like to run your DNA through the converter?',
+    message: 'Would you like to begin analyzing your DNA?',
     type: 'confirm',
     name: 'convertDNA',
     default: true
