@@ -9,9 +9,9 @@ const fileContents = Rx.Observable.fromNodeCallback(readFile)
 
 const processingDnaLog = () => console.log(chalk.bold.green('Processing DNA now...'))
 
-const parseDna = filePath => fileContents(filePath, 'utf8')
+const parseDna = (filePath) => fileContents(filePath, 'utf8')
   .tap(processingDnaLog)
-  .flatMap(file => dnaParser(file))
-  .catch(e => Rx.Observable.throw(e))
+  .flatMap((file) => dnaParser(file))
+  .catch((e) => Rx.Observable.throw(e))
 
 export { parseDna }
