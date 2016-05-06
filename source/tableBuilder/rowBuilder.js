@@ -18,19 +18,19 @@ import g291 from 'genoset-291'
 module.exports = (table, input) => {
   input = input[1]
   return table.push(
-  ['Male', male(input), 'Is male'],
-  ['101', g101(input), 'Most likely able to digest lactose and dairy products'],
-  ['119', g119(input), 'Potential 6.5x increased risk for breast cancer'],
-  ['122', g122(input), 'Potential increased risk of baldness'],
-  ['137', g137(input), 'Potential ~5.7x increased risk for thyroid cancer compared to noncarriers'],
-  ['150', g150(input), 'Of the "rapid metabolizer" phenotype for CYP2C19.'],
-  ['152', g152(input), 'Of the "poor metabolizer" phenotype for CYP2C19.'],
-  ['159', g159(input), 'Of the "rapid metabolizer" phenotype for CYP1A2.'],
-  ['191', g191(input), 'You have impaired NSAID metabolism'],
-  ['209', g209(input), 'Potential 1.7x increased risk for panic disorder'],
-  ['228', g228(input), 'You are affected by sickle cell anemia'],
-  ['243', g243(input), 'Potential 50% increased risk of prostate cancer patients dying of the disease'],
-  ['248', g248(input), 'You have a lower risk for developing Parkinsons Disease'],
-  ['291', g291(input), 'Determines if a genome is lower risk for heart attack or cardiovascular incident, ~10-20% of people']
-)
+    ['Male', male(input), 'Is male'],
+    ['101', g101(input), 'Most likely able to digest lactose and dairy products'],
+    ['119', g119(input), 'Potential 6.5x increased risk for breast cancer'],
+    ['122', g122(input), 'Potential increased risk of baldness'],
+    ['137', g137(input), 'Potential ~5.7x increased risk for thyroid cancer compared to noncarriers'],
+    ['150', g150(input), 'Of the "rapid metabolizer" phenotype for CYP2C19.'],
+    ['152', g152(input), 'Of the "poor metabolizer" phenotype for CYP2C19.'],
+    ['159', g159(input), 'Of the "rapid metabolizer" phenotype for CYP1A2.'],
+    ['191', g191(input), 'You have impaired NSAID metabolism'],
+    ['209', g209(input), 'Potential 1.7x increased risk for panic disorder'],
+    ['228', g228(input), 'You are affected by sickle cell anemia'],
+    ['243', g243(input), 'Potential 50% increased risk of prostate cancer patients dying of the disease'],
+    ['248', g248(input), 'You have a lower risk for developing Parkinsons Disease'],
+    ['291', g291(input), 'Determines if a genome is lower risk for heart attack or cardiovascular incident, ~10-20% of people']
+  )
 }
