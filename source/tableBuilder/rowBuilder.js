@@ -11,6 +11,7 @@ import g159 from 'genoset-159'
 import g191 from 'genoset-191'
 import g209 from 'genoset-209'
 import g211 from 'genoset-211'
+import g216 from 'genoset-216'
 import g228 from 'genoset-228'
 import g243 from 'genoset-243'
 import g248 from 'genoset-248'
@@ -30,6 +31,7 @@ module.exports = (table, input) => {
     ['191', g191(input), 'You have impaired NSAID metabolism'],
     ['209', g209(input), 'Potential 1.7x increased risk for panic disorder'],
     ['211', g211(input), 'Drinking alcohol has greater effect because problem metabolizing ethanol with ADH (alcohol dehydrogenase)'],
+    ['216', g216(input), 'Two copies of the ApoE-ε4 allele'],
     ['228', g228(input), 'You are affected by sickle cell anemia'],
     ['243', g243(input), 'Potential 50% increased risk of prostate cancer patients dying of the disease'],
     ['248', g248(input), 'You have a lower risk for developing Parkinsons Disease'],
