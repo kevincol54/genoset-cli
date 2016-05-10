@@ -1,3 +1,5 @@
 node_modules
 distribution
 mydna.txt
+.jshintignore
+.jshintrc

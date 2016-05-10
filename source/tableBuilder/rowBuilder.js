@@ -1,6 +1,6 @@
 'use strict'
 
-import male from  'genoset-male'
+import male from 'genoset-male'
 import g101 from 'genoset-101'
 import g119 from 'genoset-119'
 import g122 from 'genoset-122'
