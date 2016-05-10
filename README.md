@@ -1,6 +1,5 @@
 #Genoset-cli
 
-
 ##About
 
 Genoset-cli is an open source tool for running ones genome against predefined collections of single nucliotide polymorphisms ([Genosets](https://www.npmjs.com/search?q=genoset)), which can be built using the info at [SNPedia](http://www.snpedia.com/index.php/Genoset) in conjunction with the awesome tools developed by [@contra](https://twitter.com/contrahacks) over at [genome.js](https://github.com/genomejs/).
@@ -52,5 +51,3 @@ To Contribute:
 ## License
 
 _genoset-cli_ is available under the [MIT](https://mths.be/mit) license.
-
-
